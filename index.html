@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wallpaper with Widgets</title>
+  <style>
+    /* Estilos globais */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body, html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* Video de fundo cobrindo os dois monitores */
+    #background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1; /* Para ficar atrás dos widgets */
+    }
+
+    /* Container dos widgets */
+    .widget-container {
+      position: absolute;
+      top: 20px; /* Posição dos widgets do topo */
+      right: 20px; /* Posição dos widgets do lado direito */
+      display: flex;
+      gap: 20px; /* Espaçamento entre os widgets */
+    }
+
+    iframe {
+      border: none;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+    }
+
+    /* Ajustando dimensões dos widgets */
+    .clock-widget, .calendar-widget {
+      width: 300px;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background de vídeo cobrindo a tela inteira -->
+  <video id="background-video" autoplay muted loop>
+    <source src="https://elziorsjunior.github.io/Wallpaper/bg01.mp4" type="video/mp4">
+    Seu navegador não suporta o formato de vídeo.
+  </video>
+
+  <!-- Container dos widgets -->
+  <div class="widget-container">
+    <!-- Widget Clock -->
+    <iframe src="https://elziorsjunior.github.io/widgets/Clock/index.html" class="clock-widget"></iframe>
+
+    <!-- Widget Calendar -->
+    <iframe src="https://elziorsjunior.github.io/widgets/Calendar/index.html" class="calendar-widget"></iframe>
+  </div>
+</body>
+</html>
